@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1920, height=1080, user-scalable=no">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' http://127.0.0.1:8090 data:; connect-src http://127.0.0.1:8090; style-src 'self'; script-src 'self';">
+  <title>ARK Showcase</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="stage">
+    <div id="app" class="app">
+      <div class="vignette" aria-hidden="true"></div>
+      <div class="grain" aria-hidden="true"></div>
+
+      <section id="screen-title" class="screen is-active" data-screen="title">
+        <div class="title-stack">
+          <p class="eyebrow">SAMPLE · SERIES COMPANION</p>
+          <h1 class="title-mark">
+            <span class="title-line">THE</span>
+            <span class="title-line">ARK ROAD</span>
+          </h1>
+          <div class="title-rule" aria-hidden="true"></div>
+          <p id="title-tagline" class="title-tagline">SAMPLE TAGLINE — replace</p>
+          <button id="title-enter" class="enter-prompt" type="button" tabindex="-1" data-focusable data-action="open-episodes">
+            Press ENTER
+          </button>
+        </div>
+        <p id="data-badge" class="data-badge">SAMPLE FALLBACK</p>
+      </section>
+
+      <section id="screen-episodes" class="screen" data-screen="episodes" hidden>
+        <header class="topbar">
+          <div class="topbar-brand">
+            <p class="eyebrow">THE ARK ROAD</p>
+            <h2 class="screen-heading">Episodes</h2>
+          </div>
+          <nav class="top-nav" aria-label="Primary">
+            <button type="button" class="nav-tab is-current" tabindex="-1" data-focusable data-action="goto-episodes">Episodes</button>
+            <button type="button" class="nav-tab" tabindex="-1" data-focusable data-action="goto-world">World</button>
+          </nav>
+        </header>
+        <div id="episode-row" class="card-row"></div>
+        <p class="hint-line">Arrows move · ENTER opens · RETURN back</p>
+      </section>
+
+      <section id="screen-detail" class="screen" data-screen="detail" hidden>
+        <header class="topbar">
+          <div class="topbar-brand">
+            <p id="detail-code" class="eyebrow">S01E01</p>
+            <h2 id="detail-title" class="screen-heading">The Staircase</h2>
+          </div>
+          <p id="detail-runtime" class="meta-pill">SAMPLE · 15:00</p>
+        </header>
+        <div class="detail-grid">
+          <article class="synopsis-panel">
+            <h3 class="panel-label">Synopsis · SAMPLE</h3>
+            <p id="detail-synopsis" class="synopsis-text"></p>
+          </article>
+          <article class="craft-card" tabindex="-1" data-focusable data-action="noop">
+            <h3 class="panel-label">Craft · SAMPLE</h3>
+            <p id="detail-craft" class="craft-text"></p>
+          </article>
+        </div>
+        <div class="stills-block">
+          <h3 class="panel-label">Stills</h3>
+          <div id="stills-strip" class="stills-strip"></div>
+        </div>
+      </section>
+
+      <section id="screen-stills" class="screen screen-stills" data-screen="stills" hidden>
+        <div id="still-stage" class="still-stage">
+          <img id="still-image" class="still-image" alt="">
+          <div id="still-placeholder" class="still-placeholder is-hidden">
+            <span class="ph-kicker">SAMPLE STILL</span>
+            <span class="ph-title">Image unavailable</span>
+            <span class="ph-sub">placeholder card · source missing</span>
+          </div>
+        </div>
+        <div class="still-caption-bar">
+          <p id="still-index" class="still-index">1 / 2</p>
+          <p id="still-caption" class="still-caption">SAMPLE — cold open</p>
+          <p class="still-hint">LEFT / RIGHT step · RETURN back</p>
+        </div>
+      </section>
+
+      <section id="screen-world" class="screen" data-screen="world" hidden>
+        <header class="topbar">
+          <div class="topbar-brand">
+            <p class="eyebrow">THE ARK ROAD</p>
+            <h2 class="screen-heading">World · SAMPLE placeholders</h2>
+          </div>
+          <nav class="top-nav" aria-label="Primary">
+            <button type="button" class="nav-tab" tabindex="-1" data-focusable data-action="goto-episodes">Episodes</button>
+            <button type="button" class="nav-tab is-current" tabindex="-1" data-focusable data-action="goto-world">World</button>
+          </nav>
+        </header>
+        <div id="world-grid" class="world-grid"></div>
+      </section>
+
+      <div id="toast" class="toast" hidden></div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

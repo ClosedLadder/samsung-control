@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets"
+        xmlns:tizen="http://tizen.org/ns/widgets"
+        id="http://example.org/arkshowcase"
+        version="1.0.0"
+        viewmodes="maximized">
+  <tizen:application id="ArkShowcaseApp" package="ArkShowcasePkg" required_version="2.3"/>
+  <content src="index.html"/>
+  <name>ARK Showcase</name>
+  <tizen:profile name="tv-samsung"/>
+  <tizen:setting screen-orientation="landscape"
+                 context-menu="disable"
+                 background-support="disable"
+                 encryption="disable"
+                 install-location="auto"
+                 hwkey-event="enable"/>
+  <tizen:privilege name="http://tizen.org/privilege/internet"/>
+  <!-- Update origin to your tv-hub host before packaging, e.g. http://<hub-ip>:8090 -->
+  <access origin="http://127.0.0.1:8090" subdomains="false"/>
+  <feature name="http://tizen.org/feature/screen.size.normal.1080.1920"/>
+</widget>

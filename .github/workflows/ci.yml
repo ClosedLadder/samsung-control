@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compile Python files
+        run: |
+          find . -name '*.py' -not -path './.git/*' -print0 | xargs -0 python3 -m py_compile
+
+      - name: Syntax-check shell scripts
+        run: |
+          count=0
+          while IFS= read -r -d '' f; do
+            bash -n "$f"
+            count=$((count + 1))
+          done < <(find . -name '*.sh' -not -path './.git/*' -print0)
+          if [ "$count" -eq 0 ]; then
+            echo "No shell scripts found — skipping"
+          fi

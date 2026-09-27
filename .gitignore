@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+env/
+.env
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+
+# tv-hub runtime data (keep examples)
+tv-hub/data/trading.json
+tv-hub/photos/*
+!tv-hub/photos/.gitkeep
+tv-hub/ark/*
+!tv-hub/ark/.gitkeep
+
+# Tizen / Node (if you add a build toolchain)
+node_modules/
+*.wgt
+.tizen-studio/
+signing/
+
+# OS / editor
+.DS_Store
+._*
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Secrets
+*.pem
+*.p12
+*token*
+tv-token

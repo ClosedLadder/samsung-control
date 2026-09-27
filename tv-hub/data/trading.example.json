@@ -1,0 +1,18 @@
+{
+  "note": "Example snapshot — copy to trading.json and edit for your hub",
+  "broker_a": {
+    "equity": 0.0,
+    "status": "FLAT"
+  },
+  "broker_b": {
+    "note": "spot only",
+    "usd_total": 0.0
+  },
+  "realized_season": 0.0,
+  "broker_c": {
+    "cash": 0.0,
+    "day_pnl": 0.0,
+    "equity": 0.0,
+    "positions": []
+  }
+}
